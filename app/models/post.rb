@@ -5,9 +5,7 @@ validates :finish, presence: true
 validates :note,length:{maximum:500}
 validate:start_end_check
  def start_end_check
-    return if start.nil?||finish.nil?
-      if self.start > self.finish
-      errors.add(:finish,"は開始日より前の日付は登録できません")
-      end
-    end
+    errors.add(:finish,"は開始日より前の日付は登録できません")unless
+    self.start < self.finish
  end
+end
