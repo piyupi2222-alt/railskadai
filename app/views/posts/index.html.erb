@@ -44,8 +44,8 @@
             </td>
             <td>
 
- <%=link_to"削除",post,method::delete,data:{confirm:"本当に削除しますか？"}%>
-          
+ 
+                    <%=link_to("削除", "/posts/#{post.id}/destroy",{method:"post",data: { confirm: "本当に削除しますか？" }})%>
             </td>
         </tr>
         <% end %>
