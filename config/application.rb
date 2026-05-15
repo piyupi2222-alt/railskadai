@@ -6,7 +6,7 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Sct
+module Myapp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.2
@@ -23,5 +23,11 @@ module Sct
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+config.action_controller.permit_all_parameters = true
+    config.time_zone = 'Tokyo'
+    config.i18n.default_locale = :ja
+
+
+    
   end
 end
